@@ -1,0 +1,43 @@
+SetEnv PHPRC /home/vpcoffee/public_html
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+
+<IfModule mod_php5.c>
+  php_flag allow_call_time_pass_reference 1
+  php_flag session.use_trans_sid off
+
+  php_value display_errors 0
+  #php_value mbstring.func_overload 2
+  #php_value mbstring.internal_encoding UTF-8
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+</IfModule>
+
+redirect 301 /additionally/  /coffeem/dop-tovary/
+redirect 301 /coffeem/kofemashiny-v-arendu-ot-1-kg/  /coffeem/kofemashiny-s-mekhanicheskim-kapuchinatorom/
+redirect 301 /coffeem/kofemashiny-v-arendu-ot-3-kg/  /coffeem/kofemashiny-s-avtomaticheskim-kapuchinatorom/
+redirect 301 /coffeem/kofemashiny-v-arendu-ot-5-kg/  /coffeem/kofemashiny-s-avtomaticheskim-kapuchinatorom/
+redirect 301 /coffeem/kofemashiny-v-arendu-ot-12-kg/  /coffeem/kofemashiny-superavtomat/
+php_value default_charset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
