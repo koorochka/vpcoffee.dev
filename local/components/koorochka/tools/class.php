@@ -6,12 +6,12 @@ if(class_exists("koorochkaTools"))
     return;
 
 //Необходимо для корректного поиска класса CDemoSqr
-CBitrixComponent::includeComponentClass("koorochka:vpcoffee.coffee.list");
 CBitrixComponent::includeComponentClass("koorochka:vpcoffee.coffee.machine.list");
+CBitrixComponent::includeComponentClass("koorochka:vpcoffee.additionally.list");
 //Наследник расширяющий функциональность:
 
 
-class koorochkaTools extends vpcoffeeCoffeeList
+class koorochkaTools extends vpcoffeeCoffeeMachineList
 {
     // <editor-fold defaultstate="collapsed" desc=" Derictories tools">
     /**
@@ -53,8 +53,9 @@ class koorochkaTools extends vpcoffeeCoffeeList
     public function executeComponent()
     {
 
-        $test = new vpcoffeeCoffeeMachineList();
-        d($test->getElements());
+        $test = new vpcoffeeAdditionallyList();
+        $test->setTest("Additionaly");
+        d($test->getTest());
 
 
     }
