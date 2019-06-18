@@ -56,7 +56,7 @@ class koorochkaTools extends vpcoffeeCoffeeMachineList
         $test = new vpcoffeeAdditionallyList();
         $test->setTest("Additionaly");
         d($test->getTest());
-
+ 
 
     }
     // </editor-fold>
