@@ -7,6 +7,7 @@ if(class_exists("koorochkaTools"))
 
 //Необходимо для корректного поиска класса CDemoSqr
 CBitrixComponent::includeComponentClass("koorochka:vpcoffee.coffee.list");
+CBitrixComponent::includeComponentClass("koorochka:vpcoffee.coffee.machine.list");
 //Наследник расширяющий функциональность:
 
 
@@ -52,7 +53,8 @@ class koorochkaTools extends vpcoffeeCoffeeList
     public function executeComponent()
     {
 
-        d($this->getElements());
+        $test = new vpcoffeeCoffeeMachineList();
+        d($test->getElements());
 
 
     }
