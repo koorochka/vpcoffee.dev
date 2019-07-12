@@ -4,15 +4,16 @@ use Bitrix\Main\Loader;
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
     die();
 
-if(class_exists("iblockElemnets"))
+if(class_exists("koorochkaIblockElemnets"))
     return;
 
-class iblockElemnets extends CBitrixComponent
+class koorochkaIblockElemnets
 {
     private $_order;
     private $_filter;
     private $_select;
     private $_elements;
+    private $_sections;
 
     // <editor-fold defaultstate="collapsed" desc="Order">
     /**
@@ -89,7 +90,7 @@ class iblockElemnets extends CBitrixComponent
     {
         $elements = array();
         if(Loader::includeModule("iblock")){
-            $result = CIBlockElements::GetList(
+            $result = CIBlockElement::GetList(
                 $this->getOrder(),
                 $this->getFilter(),
                 false,
@@ -97,14 +98,72 @@ class iblockElemnets extends CBitrixComponent
                 $this->getSelect()
             );
             while ($element = $result->Fetch()){
-                $elements[] = $element;
+                $elements[$element["ID"]] = $element;
             }
         }
-        $this->_elements = $elements;
+        $this->setElements($elements);
+    }
+
+    public function setIbGetNext()
+    {
+        $elements = array();
+        if(Loader::includeModule("iblock")){
+            $result = CIBlockElement::GetList(
+                $this->getOrder(),
+                $this->getFilter(),
+                false,
+                false,
+                $this->getSelect()
+            );
+            while ($element = $result->GetNext()){
+                $elements[$element["ID"]] = $element;
+            }
+        }
+        $this->setElements($elements);
     }
     // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="Sections">
 
+    /**
+     * @return mixed
+     */
+    public function getSections()
+    {
+        return $this->_sections;
+    }
 
+    /**
+     * @param mixed $sections
+     */
+    public function setSections($sections)
+    {
+        $this->_sections = $sections;
+    }
+
+    public function setIbSectionsFetch()
+    {
+        $elements = array();
+        if(Loader::includeModule("iblock")){
+            $result = CIBlockSection::GetList(
+                $this->getOrder(),
+                $this->getFilter(),
+                false,
+                $this->getSelect()
+            );
+            while ($element = $result->Fetch()){
+                $elements[$element["ID"]] = $element;
+            }
+        }
+        $this->setSections($elements);
+    }
+
+    // </editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Dev tools">
+    public function test(){
+        echo $this->getName();
+    }
+    // </editor-fold>
 
 }
