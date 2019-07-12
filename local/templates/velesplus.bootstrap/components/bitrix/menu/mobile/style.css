@@ -1,0 +1,48 @@
+div.menu-sitemap-tree
+{
+	font-size:100%;
+}
+
+div.menu-sitemap-tree ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.menu-sitemap-tree ul ul
+{
+	width: auto;
+	margin-top: 10px;
+}
+
+div.menu-sitemap-tree li
+{
+	padding:10px;
+	border-bottom: 1px solid #2a0c02;
+}
+
+div.menu-sitemap-tree li li
+{
+	border-bottom: 0;
+	border-top:1px solid #2a0c02;
+	padding:10px;
+}
+div.menu-sitemap-tree li.menu-open{
+	background-color: rgba(255, 255, 255, .7);
+}
+div.menu-sitemap-tree li.menu-close ul
+{
+	display: none;
+}
+
+/*Icons*/
+div.folder
+{
+	background-repeat:no-repeat;
+	width:17px;
+	height:17px;
+	vertical-align:top;
+}
+div.folder{cursor:pointer; cursor: hand;background-image:url(images/open.png);}
+div.menu-sitemap-tree li.menu-close div.folder{background-image:url(images/closed.png);}

@@ -1,0 +1,16 @@
+#machines_list{}
+#machines_list table{
+border-collapse:collapsel;
+margin: 10px 10px 10px 0; 
+float: left;
+border:0 none;
+width:350px;
+}
+#machines_list td{vertical-align:top;}
+#machines_list img{border: 3px solid #717171; float: left; width:100px; height:100px;}
+.clear{clear:both;}
+
+#machines_list .pdf-link{
+    background: url(images/pdf.png) no-repeat left center;
+    padding-left: 18px;
+}

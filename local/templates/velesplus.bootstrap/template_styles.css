@@ -1,0 +1,195 @@
+/**
+  * Header
+  */
+#header{
+    background-image: url("images/header.png");
+    background-repeat: repeat;
+    color: #fff;
+    padding:0;
+}
+#header .container{
+    background-image: url("images/header_bg_center.png");
+    background-repeat: repeat-y;
+    padding-top: 2px;
+    font-size: 16px;
+}
+.navbar-toggle-block{
+    max-width: 70px;
+}
+.navbar-toggle{
+    background-color: inherit;
+    background-image: url("images/menu.item.active.gif");
+    background-repeat: repeat;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    box-shadow: 0 2px 2px #aaa;
+    float: none;
+}
+.icon-bar {
+    background-color: #fff !important;
+}
+.sidebur-collapse{
+    margin-right: 0;
+}
+.sidebur-title {
+    font-size: 19px;
+    margin-top: 0;
+    color: #441707 !important;
+}
+/**
+  * Sidebur
+  */
+#sidebur{
+    background-color: rgba(255, 255, 255, .3);
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px #aaa;
+    margin-right: 20px;
+}
+#veles-calculator, .btn-info{
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #fff;
+    background-color: inherit;
+    background-image: url("/local/templates/velesplus.bootstrap/components/bitrix/menu/top/images/menu.item.active.gif");
+    background-repeat: repeat;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px #aaa;
+}
+#veles-calculator{
+    text-decoration: underline;
+}
+#veles-calculator:hover,
+#veles-calculator:focus{
+    text-decoration: none;
+}
+/**
+  * Etalon item
+  */
+.catalog-section .col-md-3{
+    width: 20%;
+}
+.catalog-section .col-md-9{
+    width: 77%;
+    padding-left: 0;
+}
+
+/**
+  * Footer
+  */
+#footer{
+    background-image: url("images/footer.gif");
+    background-repeat: repeat;
+    background-color: #212121;
+    color: #fff;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+#footer .col-xs-12{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#dotted-col{
+    border-left: 1px dotted #fff;
+    border-right: 1px dotted #fff;
+}
+#footer a,
+#footer .bottom-menu a:hover{
+    color: #c3bb00;
+}
+#footer .bottom-menu a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+/**
+  * modal
+  */
+#modal .modal-content{
+    background-color: #f7f2df;
+    background-image: url("/local/templates/velesplus.bootstrap/images/bg.gif");
+    background-repeat: repeat;
+    background-position: top center;
+}
+
+/**
+  * Adaptive
+  */
+@media (max-width: 1200px) {
+    /**
+    * Etalon item
+    */
+    .catalog-section .col-md-3{
+        width: 23%;
+    }
+}
+@media (max-width: 991px) {
+    #header .container{
+        background-image: none;
+    }
+    #header #site-logo{
+        max-width: 80%;
+    }
+    #header .row, .text-right{
+        text-align: center !important;
+    }
+    #sidebur{
+        margin-right: 0;
+    }
+    #veles-calculator{
+        float: none !important;
+        display: block;
+    }
+    .table > thead > tr > th,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > tbody > tr > td,
+    .table > tfoot > tr > td
+    {
+        padding: 5px;
+        font-size: 11px;
+    }
+    /**
+      * Etalon item
+      */
+    .catalog-section .col-md-3{
+        width: 34%;
+    }
+    .catalog-section .col-md-9{
+        width: 66%;
+        padding-left: 0;
+    }
+}
+
+.layout {
+    position: initial;
+}
+
+.layout-swipe {
+    position: relative;
+    z-index: 2;
+    transform: translateX(0);
+    transition: 0.2s ease-in-out 0.2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.layout-swipe.mobile-mod-on {
+    transform: translateX(80%);
+    transition: .2s ease-in-out;
+}
+
+.header-top {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 20%;
+    left: 0;
+    overflow: hidden;
+    min-height: 100%;
+}

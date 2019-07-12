@@ -1,0 +1,77 @@
+#table-price{
+	position: relative;
+	z-index: 1;
+	font-size:13px;
+}
+
+/**
+  * Controls
+  */
+.table-controls{
+	margin: 0;
+	padding: 0;
+}
+.table-controls .table-control{
+	background-color: #441707;
+	color: #fff;
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	border-top: 2px solid #441707;
+	border-left: 2px solid #441707;
+	border-right: 2px solid #441707;
+	padding: 10px 15px;
+	position: relative;
+	bottom: -2px;
+	z-index: 2;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.table-controls .table-control-first{
+	border-radius: 5px 0 0 0;
+}
+.table-controls .table-control-last{
+	border-radius: 0 5px 0 0;
+}
+.table-controls .table-control.active{
+	background-image: url("images/bg.jpg");
+	background-color: inherit;
+	color: #441707;
+	text-decoration: none;
+}
+.table-controls .table-control:hover,
+.table-controls .table-control:focus{
+	background-color: #2a1507;
+	text-decoration: none;
+}
+/**
+  * Tabs
+  */
+.table-price-tabs{
+	border: 2px solid #441707;
+	border-radius: 0 5px 5px 5px;
+	position: relative;
+	z-index: 1;
+	padding: 15px;
+	background-image: url("images/bg.png");
+}
+.table-price-tabs .table-price-tab{
+	display: none;
+}
+.table-price-tabs .table-price-tab.active{
+	display: block;
+}
+#table-price td{
+	text-align: center;
+	vertical-align: middle;
+}
+
+/**
+  * Adaptive
+  */
+@media (max-width: 768px) {
+	.table-controls .table-control{
+		padding: 10px 8px;
+	}
+}
